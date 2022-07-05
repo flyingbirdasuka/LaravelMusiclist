@@ -16,10 +16,6 @@
 	    <label for="cover-image">Cover image</label>
 	    <input type="file" class="form-control" id="cover-image" name="cover-image">
 	  </div>
-	 
 	  <button type="submit" class="btn btn-primary">Submit</button>
 	</form>
 @endsection
-
-
-<!-- set the old value -->
