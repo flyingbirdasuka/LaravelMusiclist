@@ -9,8 +9,6 @@
                      <p> {{ $list->description}}</p> 
                     <a href="/songs/create/{{$list->id}}"class="btn btn-sm btn-primary float-right">Add songs to the list!</a>
                 </div>
-
-                
                    @if(count($list->song) > 0) 
                        @foreach($list->song as $song)
                        <div class="card-body">
@@ -21,7 +19,6 @@
                        <p> Year: {{ $song->year }}</p>
                        <a href="{{ $song->link }}" target="_blank">Listen on Spotify</a>
                        <div class="btn-group float-right">
-                          <!-- <a type="button" class="btn btn-info btn-outline-secondary" href="/lists">View</a> -->
                           <form action="{{ route('song-destroy', $song->id) }}" method="post">
                             @csrf
                             @method('DELETE')
@@ -34,8 +31,6 @@
                    @else
                         <p>No list yet!</p>
                    @endif         
-                   <!--  {{ __('You are logged in!') }} -->
-                
             </div>
         </div>
     </div>
