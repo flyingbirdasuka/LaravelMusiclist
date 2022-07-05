@@ -36,7 +36,6 @@ class ListsController extends Controller
      */
     public function create()
     { 
-       
         return view('lists.create');
     }
         
@@ -78,33 +77,8 @@ class ListsController extends Controller
      */
     public function show($id)
     {
-    
         $list = Lists::with('song')->find($id);
-        // dd($list);
         return view('lists.show')->with('list', $list);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     /**
@@ -116,7 +90,6 @@ class ListsController extends Controller
     public function destroy($id)
     {
         $list = Lists::find($id);
-        // dd($list);
         if($list){
             Storage::delete('/public/album-covers' . $list->cover_image);
             $list->delete();
