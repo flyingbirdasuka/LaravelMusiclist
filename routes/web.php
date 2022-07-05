@@ -20,7 +20,6 @@ Auth::routes();
 
 Route::resource('lists', ListsController::class);
 
-// Route::resource('songs', SongsController::class);
 Route::get('/songs/create/{listId}', [SongsController::class, 'create']);
 Route::post('/songs', [SongsController::class, 'store']);
 Route::delete('/songs/{id}', [SongsController::class, 'destroy'])->name('song-destroy');
